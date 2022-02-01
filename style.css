@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+span {
+    border: 1px solid #ccc;
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+    border: 2px solid lightblue;
+    margin: 0 auto;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+    gap: 0;
+    width: 300px;
+    height: 300px;
+    border: 2px solid lightblue;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9 {
+    border: 1px solid black;
+}
