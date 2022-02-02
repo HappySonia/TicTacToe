@@ -9,6 +9,7 @@ var box8 = document.querySelector('.box8')
 var box9 = document.querySelector('.box9')
 
 var toggle = true;
+var sumOfToggle = 0;
 document.querySelector('.win').textContent = '';
 
 //switch turn works
@@ -27,6 +28,7 @@ function markedNot(box) {
         }
     })
 }
+
 markedNot(box1)
 markedNot(box2)
 markedNot(box3)
@@ -36,7 +38,6 @@ markedNot(box6)
 markedNot(box7)
 markedNot(box8)
 markedNot(box9)
-
 
 // win condition
 
@@ -136,13 +137,11 @@ function win() {
         box9.style.backgroundColor = 'green';
         document.querySelector('.win').textContent = 'play2 win';
         alert('player2 win');;
-    } else {
+    } else if (box1.textContent != '' && box2.textContent != '' && box3.textContent != '' && box4.textContent != '' && box5.textContent != '' && box6.textContent != '' && box7.textContent != '' && box8.textContent != '' && box9.textContent != '') {
         document.querySelector('.win').textContent = 'you are tie';
-        return;
+        alert('you are tie');
     }
 }
-
-
 
 // restart button works
 document.querySelector('.restart').addEventListener('click', function() {
