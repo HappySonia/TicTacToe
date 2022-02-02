@@ -24,7 +24,8 @@ span {
     border: 2px solid lightblue;
 }
 
-.box1,
+
+/* .box1,
 .box2,
 .box3,
 .box4,
@@ -33,5 +34,9 @@ span {
 .box7,
 .box8,
 .box9 {
-    border: 1px solid black;
+    border: 1px solid red;
+} */
+
+.box {
+    border: 1px solid red;
 }
