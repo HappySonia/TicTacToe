@@ -1,9 +1,31 @@
-// step1: define 9 boxes' name ---add class names, ('box box1')
-// step2: define 2 players' clicks   how to know which box is clicked ?? 
- if one box has been clicked , then there are 8 boxes left for another player. 
- then next will be 7 boxes .  when 2 boxes connects , player will have to stick on the box of the same row or bow or crossline ;
- 
-// step3: define the win rules ---> use if condition. there are total 8 conditions 
-       123 or 456or 789 or 147 258 369 or 159 357 
-// step4: switch turn :  use remainder.  while(i<9)loop 
-// step5: tracking 2 players' scores.   scores +=1
+
+// Problem
+// 3x3 board ,marking each box each time a player clicks on it. 
+// A- check for a win, lose or tie after every click -addEventListener
+// B- if these conditions are not met then will change the sign
+
+
+// First step draw the board in the HTML and listen to clicks on each box
+
+// Winning condition is going to be an Array of Numbers
+
+// Step two: create a winning condition var winningCondition = [//numbers in it. numbers will be the index of 3x3 board]  array  123 or 456or 789 or 147 258 369 or 159 357 
+
+
+// Start
+// Player 1 clicks on a random box ,  Math.random()
+// Is the box clicked before; is there a mark already existing on that box?
+
+// If yes, don't allow it or don't listen to the click
+// If no then: Mark the box with X
+// Is there a winning condition?
+
+// If yes
+// Is it a win or lose or tie?
+
+// Put a message with congra or lose based on the winning condition.
+// Give an option to restart and go back to the beginning 
+
+// If no refering to line 13:
+// Change the player and Mark it with O
+// Is the chosen box empty ?
