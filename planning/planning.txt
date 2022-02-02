@@ -1,0 +1,9 @@
+// step1: define 9 boxes' name ---add class names, ('box box1')
+// step2: define 2 players' clicks   how to know which box is clicked ?? 
+ if one box has been clicked , then there are 8 boxes left for another player. 
+ then next will be 7 boxes .  when 2 boxes connects , player will have to stick on the box of the same row or bow or crossline ;
+ 
+// step3: define the win rules ---> use if condition. there are total 8 conditions 
+       123 or 456or 789 or 147 258 369 or 159 357 
+// step4: switch turn :  use remainder.  while(i<9)loop 
+// step5: tracking 2 players' scores.   scores +=1
