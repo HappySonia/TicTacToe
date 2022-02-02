@@ -18,10 +18,15 @@ span {
     display: grid;
     grid-template-columns: 100px 100px 100px;
     grid-template-columns: 100px 100px 100px;
-    gap: 0;
+    gap: 2px;
     width: 300px;
     height: 300px;
     border: 2px solid lightblue;
+    margin: 0 auto;
+}
+
+.restart {
+    margin: 0 auto;
 }
 
 
@@ -38,5 +43,5 @@ span {
 } */
 
 .box {
-    border: 1px solid red;
+    border: 2px solid red;
 }
