@@ -17,8 +17,6 @@ document.querySelector('.x-score').textContent = '';
 document.querySelector('.o-score').textContent = '';
 
 // addEventListener 
-
-
 for (let i = 0; i < 9; i++) {
     boxArr[i].addEventListener(('click'), function(event) {
         if (event.target.textContent === '' && !win()) {
