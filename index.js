@@ -8,14 +8,15 @@ var box7 = document.querySelector('.box7')
 var box8 = document.querySelector('.box8')
 var box9 = document.querySelector('.box9')
 
+var boxArr = [box1, box2, box3, box4, box5, box6, box7, box8, box9]
 var toggle = true;
 
 document.querySelector('.x-score').textContent = '';
 document.querySelector('.o-score').textContent = '';
 
-//switch turn works
-function markedNot(box) {
-    box.addEventListener('click', function(event) {
+// addEventListener 
+for (let i = 0; i < 9; i++) {
+    boxArr[i].addEventListener(('click'), function(event) {
         if (event.target.textContent === '') {
             if (toggle == true) {
                 event.target.textContent = 'X'
@@ -29,16 +30,6 @@ function markedNot(box) {
         }
     })
 }
-
-markedNot(box1)
-markedNot(box2)
-markedNot(box3)
-markedNot(box4)
-markedNot(box5)
-markedNot(box6)
-markedNot(box7)
-markedNot(box8)
-markedNot(box9)
 
 // win condition
 var scoreOfPlayer1 = 0;
@@ -164,47 +155,24 @@ function win() {
 
 // restart button works
 document.querySelector('.restart').addEventListener('click', function() {
-    box1.textContent = '';
-    box2.textContent = '';
-    box3.textContent = '';
-    box4.textContent = '';
-    box5.textContent = '';
-    box6.textContent = '';
-    box7.textContent = '';
-    box8.textContent = '';
-    box9.textContent = '';
-    box1.style.backgroundColor = '';
-    box2.style.backgroundColor = '';
-    box3.style.backgroundColor = '';
-    box4.style.backgroundColor = '';
-    box5.style.backgroundColor = '';
-    box6.style.backgroundColor = '';
-    box7.style.backgroundColor = '';
-    box8.style.backgroundColor = '';
-    box9.style.backgroundColor = '';
+    for (let i = 0; i < 9; i++) {
+        boxArr[i].textContent = '';
+    }
+    for (let i = 0; i < 9; i++) {
+        boxArr[i].style.backgroundColor = '';
+    }
     toggle = true;
 })
 
 // reset button works
 document.querySelector('.reset').addEventListener('click', function() {
-    box1.textContent = '';
-    box2.textContent = '';
-    box3.textContent = '';
-    box4.textContent = '';
-    box5.textContent = '';
-    box6.textContent = '';
-    box7.textContent = '';
-    box8.textContent = '';
-    box9.textContent = '';
-    box1.style.backgroundColor = '';
-    box2.style.backgroundColor = '';
-    box3.style.backgroundColor = '';
-    box4.style.backgroundColor = '';
-    box5.style.backgroundColor = '';
-    box6.style.backgroundColor = '';
-    box7.style.backgroundColor = '';
-    box8.style.backgroundColor = '';
-    box9.style.backgroundColor = '';
+    for (let i = 0; i < 9; i++) {
+        boxArr[i].textContent = '';
+    }
+    for (let i = 0; i < 9; i++) {
+        boxArr[i].style.backgroundColor = '';
+    }
+
     scoreOfPlayer1 = 0;
     scoreOfPlayer2 = 0;
     document.querySelector('.x-score').textContent = '';

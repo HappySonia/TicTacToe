@@ -9,7 +9,7 @@
 
 // Winning condition is going to be an Array of Numbers
 
-// Step two: create a winning condition var winningCondition = [//numbers in it. numbers will be the index of 3x3 board]  array  123 or 456or 789 or 147 258 369 or 159 357 
+// Step two: create a winning condition var winningCondition = [//numbers in it. numbers will be the index of 3x3 board]  array  123 or 456 or 789 or 147 258 369 or 159 357 
 
 
 // Start
