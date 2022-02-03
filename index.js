@@ -10,144 +10,79 @@ var box9 = document.querySelector('.box9')
 
 var boxArr = [box1, box2, box3, box4, box5, box6, box7, box8, box9]
 var toggle = true;
+var scoreOfPlayer1 = 0;
+var scoreOfPlayer2 = 0;
 
 document.querySelector('.x-score').textContent = '';
 document.querySelector('.o-score').textContent = '';
 
 // addEventListener 
+
+
 for (let i = 0; i < 9; i++) {
     boxArr[i].addEventListener(('click'), function(event) {
-        if (event.target.textContent === '') {
+        if (event.target.textContent === '' && !win()) {
             if (toggle == true) {
                 event.target.textContent = 'X'
                 toggle = false;
-                win();
+                if (win()) {
+                    scoreOfPlayer1++;
+                    document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
+                };
             } else {
                 event.target.textContent = 'O'
                 toggle = true;
-                win();
+                if (win()) {
+                    scoreOfPlayer2++;
+                    document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
+                };
             }
         }
     })
 }
 
 // win condition
-var scoreOfPlayer1 = 0;
-var scoreOfPlayer2 = 0;
-
 function win() {
-    if (box1.textContent == 'X' && box2.textContent == 'X' && box3.textContent == 'X') {
+    if ((box1.textContent == 'X' && box2.textContent == 'X' && box3.textContent == 'X') || (box1.textContent == 'O' && box2.textContent == 'O' && box3.textContent == 'O')) {
         box1.style.backgroundColor = 'green';
         box2.style.backgroundColor = 'green';
         box3.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box1.textContent == 'O' && box2.textContent == 'O' && box3.textContent == 'O') {
-        box1.style.backgroundColor = 'green';
-        box2.style.backgroundColor = 'green';
-        box3.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return;
-    } else if (box4.textContent == 'X' && box5.textContent == 'X' && box6.textContent == 'X') {
+        return true;
+    } else if ((box4.textContent == 'X' && box5.textContent == 'X' && box6.textContent == 'X') || (box4.textContent == 'O' && box5.textContent == 'O' && box6.textContent == 'O')) {
         box4.style.backgroundColor = 'green';
         box5.style.backgroundColor = 'green';
         box6.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box4.textContent == 'O' && box5.textContent == 'O' && box6.textContent == 'O') {
-        box4.style.backgroundColor = 'green';
-        box5.style.backgroundColor = 'green';
-        box6.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return;
-    } else if (box7.textContent == 'X' && box8.textContent == 'X' && box9.textContent == 'X') {
+        return true;
+    } else if ((box7.textContent == 'X' && box8.textContent == 'X' && box9.textContent == 'X') || (box7.textContent == 'O' && box8.textContent == 'O' && box9.textContent == 'O')) {
         box7.style.backgroundColor = 'green';
         box8.style.backgroundColor = 'green';
         box9.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box7.textContent == 'O' && box8.textContent == 'O' && box9.textContent == 'O') {
-        box7.style.backgroundColor = 'green';
-        box8.style.backgroundColor = 'green';
-        box9.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return;
-    } else if (box1.textContent == 'X' && box5.textContent == 'X' && box9.textContent == 'X') {
+        return true;
+    } else if ((box1.textContent == 'X' && box5.textContent == 'X' && box9.textContent == 'X') || (box1.textContent == 'O' && box5.textContent == 'O' && box9.textContent == 'O')) {
         box1.style.backgroundColor = 'green';
         box5.style.backgroundColor = 'green';
         box9.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box1.textContent == 'O' && box5.textContent == 'O' && box9.textContent == 'O') {
-        box1.style.backgroundColor = 'green';
-        box5.style.backgroundColor = 'green';
-        box9.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return;
-    } else if (box3.textContent == 'X' && box5.textContent == 'X' && box7.textContent == 'X') {
+        return true;
+    } else if ((box3.textContent == 'X' && box5.textContent == 'X' && box7.textContent == 'X') || (box3.textContent == 'O' && box5.textContent == 'O' && box7.textContent == 'O')) {
         box3.style.backgroundColor = 'green';
         box5.style.backgroundColor = 'green';
         box7.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box3.textContent == 'O' && box5.textContent == 'O' && box7.textContent == 'O') {
-        box3.style.backgroundColor = 'green';
-        box5.style.backgroundColor = 'green';
-        box7.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return
-    } else if (box1.textContent == 'X' && box4.textContent == 'X' && box7.textContent == 'X') {
+        return true;
+    } else if ((box1.textContent == 'X' && box4.textContent == 'X' && box7.textContent == 'X') || (box1.textContent == 'O' && box4.textContent == 'O' && box7.textContent == 'O')) {
         box1.style.backgroundColor = 'green';
         box4.style.backgroundColor = 'green';
         box7.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box1.textContent == 'O' && box4.textContent == 'O' && box7.textContent == 'O') {
-        box1.style.backgroundColor = 'green';
-        box4.style.backgroundColor = 'green';
-        box7.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return;
-    } else if (box2.textContent == 'X' && box5.textContent == 'X' && box8.textContent == 'X') {
+        return true;
+    } else if ((box2.textContent == 'X' && box5.textContent == 'X' && box8.textContent == 'X') || (box2.textContent == 'O' && box5.textContent == 'O' && box8.textContent == 'O')) {
         box2.style.backgroundColor = 'green';
         box5.style.backgroundColor = 'green';
         box8.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box2.textContent == 'O' && box5.textContent == 'O' && box8.textContent == 'O') {
-        box2.style.backgroundColor = 'green';
-        box5.style.backgroundColor = 'green';
-        box8.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return;
-    } else if (box3.textContent == 'X' && box6.textContent == 'X' && box9.textContent == 'X') {
+        return true;
+    } else if ((box3.textContent == 'X' && box6.textContent == 'X' && box9.textContent == 'X') || (box3.textContent == 'O' && box6.textContent == 'O' && box9.textContent == 'O')) {
         box3.style.backgroundColor = 'green';
         box6.style.backgroundColor = 'green';
         box9.style.backgroundColor = 'green';
-        scoreOfPlayer1++;
-        document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
-        return;
-    } else if (box3.textContent == 'O' && box6.textContent == 'O' && box9.textContent == 'O') {
-        box3.style.backgroundColor = 'green';
-        box6.style.backgroundColor = 'green';
-        box9.style.backgroundColor = 'green';
-        scoreOfPlayer2++;
-        document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
-        return;
+        return true;
     } else if (box1.textContent != '' && box2.textContent != '' && box3.textContent != '' && box4.textContent != '' && box5.textContent != '' && box6.textContent != '' && box7.textContent != '' && box8.textContent != '' && box9.textContent != '') {
         alert('It is a tie');
     }
@@ -172,7 +107,6 @@ document.querySelector('.reset').addEventListener('click', function() {
     for (let i = 0; i < 9; i++) {
         boxArr[i].style.backgroundColor = '';
     }
-
     scoreOfPlayer1 = 0;
     scoreOfPlayer2 = 0;
     document.querySelector('.x-score').textContent = '';
