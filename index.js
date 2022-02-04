@@ -24,6 +24,8 @@ for (let i = 0; i < 9; i++) {
                 event.target.textContent = 'X'
                 toggle = false;
                 if (win()) {
+                    document.querySelector('.hidden').textContent = "X Win";
+                    document.querySelector('.hidden').style.display = "block";
                     scoreOfPlayer1++;
                     document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
                 };
@@ -31,6 +33,8 @@ for (let i = 0; i < 9; i++) {
                 event.target.textContent = 'O'
                 toggle = true;
                 if (win()) {
+                    document.querySelector('.hidden').textContent = "O Win";
+                    document.querySelector('.hidden').style.display = "block";
                     scoreOfPlayer2++;
                     document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
                 };
@@ -45,6 +49,7 @@ function win() {
         box1.style.backgroundColor = 'green';
         box2.style.backgroundColor = 'green';
         box3.style.backgroundColor = 'green';
+
         return true;
     } else if ((box4.textContent == 'X' && box5.textContent == 'X' && box6.textContent == 'X') || (box4.textContent == 'O' && box5.textContent == 'O' && box6.textContent == 'O')) {
         box4.style.backgroundColor = 'green';
@@ -82,7 +87,8 @@ function win() {
         box9.style.backgroundColor = 'green';
         return true;
     } else if (box1.textContent != '' && box2.textContent != '' && box3.textContent != '' && box4.textContent != '' && box5.textContent != '' && box6.textContent != '' && box7.textContent != '' && box8.textContent != '' && box9.textContent != '') {
-        alert('It is a tie');
+
+        document.querySelector('.hidden').textContent = 'Draw';
     }
 }
 
@@ -95,6 +101,7 @@ document.querySelector('.restart').addEventListener('click', function() {
         boxArr[i].style.backgroundColor = '';
     }
     toggle = true;
+    document.querySelector('.hidden').textContent = '';
 })
 
 // reset button works
@@ -109,5 +116,6 @@ document.querySelector('.reset').addEventListener('click', function() {
     scoreOfPlayer2 = 0;
     document.querySelector('.x-score').textContent = '';
     document.querySelector('.o-score').textContent = '';
+    document.querySelector('.hidden').textContent = '';
     toggle = true;
 })

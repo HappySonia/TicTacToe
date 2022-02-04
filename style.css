@@ -39,6 +39,7 @@ h4 {
 }
 
 .container {
+    position: relative;
     width: 400px;
     height: 600px;
     border: 4px solid lightblue;
@@ -106,4 +107,16 @@ h4 {
     padding-bottom: 50%;
     line-height: 0;
     font-size: 3rem;
+}
+
+.hidden {
+    display: none;
+    position: absolute;
+    width: 260px;
+    height: 50px;
+    top: 50%;
+    left: 20%;
+    transform: rotate(-20deg);
+    font-size: 6rem;
+    color: darksalmon;
 }
