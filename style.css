@@ -1,6 +1,7 @@
 body {
     background: no-repeat center url(https://media.istockphoto.com/photos/creative-recreational-toys-entertainment-theme-3d-rendering-picture-id1297172362?b=1&k=20&m=1297172362&s=170667a&w=0&h=74THRjl-Mp7YaTwRYn5gCOGN_bLHaATXfgV-1I9XCF4=);
     background-size: cover;
+    margin: 0 auto;
 }
 
 h1 {
@@ -89,23 +90,21 @@ h4 {
 }
 
 .notice {
+    display: none;
     position: absolute;
-    width: 260px;
+    top: 18%;
+    left: -5%;
+    width: 451px;
     height: 50px;
-    top: 10%;
-    left: 38%;
-    transform: rotate(-10deg);
     font-size: 4rem;
+    transform: rotate(-10deg);
     color: aqua;
+    line-height: 50px;
+    text-align: center;
     font-family: 'Comforter', cursive;
     font-family: 'Monoton', cursive;
     font-family: 'Permanent Marker', cursive;
 }
-
-
-/* .hidden {
-    background-color: rgba(247, 237, 235, 0.9);
-} */
 
 audio {
     margin-left: 50px;

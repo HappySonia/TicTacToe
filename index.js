@@ -24,8 +24,6 @@ for (let i = 0; i < 9; i++) {
                 event.target.textContent = 'X'
                 toggle = false;
                 if (win()) {
-                    document.querySelector('.container').classList.add('hidden');
-                    document.querySelector('.hidden').style.backgroundColor = "rgba(247, 237, 235, 0.9)";
                     document.querySelector('.notice').style.display = "block";
                     document.querySelector('.notice').textContent = "Player 1 Wins!";
                     scoreOfPlayer1++;
@@ -35,8 +33,6 @@ for (let i = 0; i < 9; i++) {
                 event.target.textContent = 'O'
                 toggle = true;
                 if (win()) {
-                    document.querySelector('.container').classList.add('hidden');
-                    document.querySelector('.hidden').style.backgroundColor = "rgba(247, 237, 235, 0.9)";
                     document.querySelector('.notice').style.display = "block";
                     document.querySelector('.notice').textContent = "Player 2 Wins!";
                     scoreOfPlayer2++;
@@ -91,7 +87,7 @@ function win() {
         box9.style.backgroundColor = 'green';
         return true;
     } else if (box1.textContent != '' && box2.textContent != '' && box3.textContent != '' && box4.textContent != '' && box5.textContent != '' && box6.textContent != '' && box7.textContent != '' && box8.textContent != '' && box9.textContent != '') {
-
+        document.querySelector('.notice').style.display = "block";
         document.querySelector('.notice').textContent = 'Draw';
     }
 }
@@ -105,15 +101,7 @@ document.querySelector('.restart').addEventListener('click', function() {
         boxArr[i].style.backgroundColor = '';
     }
     toggle = true;
-
-
-    document.querySelector('.container').classList.remove('hidden');
-
-    document.querySelector('.notice').display = "none";
-
-
-
-
+    document.querySelector('.notice').style.display = "none";
 })
 
 // reset button works
@@ -128,10 +116,6 @@ document.querySelector('.reset').addEventListener('click', function() {
     scoreOfPlayer2 = 0;
     document.querySelector('.x-score').textContent = '';
     document.querySelector('.o-score').textContent = '';
-
     toggle = true;
-
-    document.querySelector('.container').classList.remove('hidden');
-
-    document.querySelector('.notice').display = "none";
+    document.querySelector('.notice').style.display = "none";
 })
