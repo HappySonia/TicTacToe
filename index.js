@@ -24,8 +24,10 @@ for (let i = 0; i < 9; i++) {
                 event.target.textContent = 'X'
                 toggle = false;
                 if (win()) {
-                    document.querySelector('.hidden').textContent = "X Win";
-                    document.querySelector('.hidden').style.display = "block";
+                    document.querySelector('.container').classList.add('hidden');
+                    document.querySelector('.hidden').style.backgroundColor = "rgba(247, 237, 235, 0.9)";
+                    document.querySelector('.notice').style.display = "block";
+                    document.querySelector('.notice').textContent = "Player 1 Wins!";
                     scoreOfPlayer1++;
                     document.querySelector('.x-score').textContent = `${scoreOfPlayer1}`;
                 };
@@ -33,8 +35,10 @@ for (let i = 0; i < 9; i++) {
                 event.target.textContent = 'O'
                 toggle = true;
                 if (win()) {
-                    document.querySelector('.hidden').textContent = "O Win";
-                    document.querySelector('.hidden').style.display = "block";
+                    document.querySelector('.container').classList.add('hidden');
+                    document.querySelector('.hidden').style.backgroundColor = "rgba(247, 237, 235, 0.9)";
+                    document.querySelector('.notice').style.display = "block";
+                    document.querySelector('.notice').textContent = "Player 2 Wins!";
                     scoreOfPlayer2++;
                     document.querySelector('.o-score').textContent = `${scoreOfPlayer2}`;
                 };
@@ -88,7 +92,7 @@ function win() {
         return true;
     } else if (box1.textContent != '' && box2.textContent != '' && box3.textContent != '' && box4.textContent != '' && box5.textContent != '' && box6.textContent != '' && box7.textContent != '' && box8.textContent != '' && box9.textContent != '') {
 
-        document.querySelector('.hidden').textContent = 'Draw';
+        document.querySelector('.notice').textContent = 'Draw';
     }
 }
 
@@ -101,7 +105,15 @@ document.querySelector('.restart').addEventListener('click', function() {
         boxArr[i].style.backgroundColor = '';
     }
     toggle = true;
-    document.querySelector('.hidden').textContent = '';
+
+
+    document.querySelector('.container').classList.remove('hidden');
+
+    document.querySelector('.notice').display = "none";
+
+
+
+
 })
 
 // reset button works
@@ -116,6 +128,10 @@ document.querySelector('.reset').addEventListener('click', function() {
     scoreOfPlayer2 = 0;
     document.querySelector('.x-score').textContent = '';
     document.querySelector('.o-score').textContent = '';
-    document.querySelector('.hidden').textContent = '';
+
     toggle = true;
+
+    document.querySelector('.container').classList.remove('hidden');
+
+    document.querySelector('.notice').display = "none";
 })
