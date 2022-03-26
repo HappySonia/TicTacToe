@@ -1,16 +1,19 @@
 # TicTacToe
+
 https://happysonia.github.io/TicTacToe/
+
+<p><img src="./demo/demo.png"></p>
 
 Tic-tac-toe is a game in which two players take turns in drawing either an ' O' or an ' X' in one square of a grid consisting of nine squares. The winner is the first player to get three of the same symbols in a row.
 
-## Approach to problem(planning)
-use toggle(true or false)to switch players' turn. 
+## tech used
 
-## Cool tech used
-addEventListener 
+HTML,CSS,Javascript
 
-## lessons you learned 
-splic project to components. At first,use the simple way to make a solution then improve your coding. 
+## lessons learned
+
+Javascript
 
 ## future features
-extend the 9 grids to multiple grids board. add players. 
+
+Extend the 9 grids to multiple grids board.
